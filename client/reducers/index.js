@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
 
-import things from './things'
+import getWeather from './getWeather'
 
 export default combineReducers({
-  things
+  getWeather
 })

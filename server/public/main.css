@@ -1,16 +1,74 @@
 html, body, #app {
     min-width: 100%;
-    min-height: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: 4;
+    overflow: hidden;
 }
 
 .app-container {
     min-height: 100%;
     min-width: 100%;
-    position:absolute;
     top: 0px;
     left: 0px;
+    right: 0px;
     display: flex;
     flex-direction: column;
+    background-size: cover;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.card-container {
+    margin-left: 300px;
+    margin-right: auto;
+    padding-right: 100px;
+    margin-top: 80px;
+    position: relative; 
+    width: 700px;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.card {
+    width: 100%;
+    min-width: 50%;
+    height: 420px;
+    box-shadow: 6px 6px 6px rgba(0,0,0,0.6);
+    opacity: 0.9;
+    margin: 20px;
+}
+
+.quote-container {
+   width: 82.5%;
+   top: 35%;
+   margin: auto;
+   text-align: center;
+   display: table;
+   z-index: 1000;
+   position: absolute;
+}
+
+.quote {
+  /* display: table-cell; */
+  position: absolute; 
+  font-size: 40px;
+  font-family: 'Tangerine', cursive;
+  background-color:rgba(103, 103, 107, 0.62);
+  text-indent: 10px;
+  color: white;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 1000;
+  display: table-cell;
 }
 
 .header-container {
@@ -27,18 +85,35 @@ html, body, #app {
     font-size: 26px;
 }
 
-.logo {
-    width: 165px;
-    height: 230px;
+.logo-true {
+    width: 140px;
+    height: 200px;
     padding-top: 30px;
-    padding-left: 60px;
+    padding-left: 120px;
+    margin-bottom: -140px;
+    margin-left: 90px;
 }
 
-.logo:hover {
+.logo-false {
+
+}
+
+.logo-false:hover, .logo-true:hover {
   /* animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform:  translateZ(0); */
   -webkit-animation-name: pulse;
   animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.card-container:hover {
+  /* animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform:  translateZ(0); */
+  -webkit-animation-name: shake;
+  animation-name: shake;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   backface-visibility: hidden;
@@ -95,10 +170,103 @@ html, body, #app {
     bottom: 0;
     position: absolute;
     padding: 25px;
+    background-color: #FFFFFF;
 }
 
 .footer-text {
     color:  #9E9EF3;
     font-family: Helvetica,  Arial,  sans-serif;
     font-size: 12px;
+}
+
+.info-everything {
+  margin-top: 5px;
+}
+
+.info-container {
+  width: 280px;
+  height: 418px;
+  left: 0;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.info-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.temperature-container {
+  width: 100%;
+  height: 100px;
+}
+
+.title-table {
+  display: table;
+  width: 100%;
+  height: 50px;
+}
+
+.title {
+  display: table-cell;
+  vertical-align: bottom;
+  padding-left: 50px;
+  line-height: 15px;
+  padding-bottom: 5px;
+  font-family: Helvetica,  Arial,  sans-serif;
+  font-size: 16px;
+}
+
+.horizontal-line {
+  text-align: center;
+  width: 210px;
+  border: .4px solid black;
+  margin-left: 20px;
+}
+
+.vertical-line {
+  margin-top: 35px;
+  height: 14px;
+  border: .1px solid black;
+  margin-left: -3px;
+}
+
+.temperature {
+  height: 65px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.current-temp {
+  margin: 14px;
+  font-family: Helvetica,  Arial,  sans-serif;
+  font-size: 45px;
+}
+
+.feels-like-container {
+  margin-left: 15px;
+  margin-top: 22px;
+  height: 28px;
+}
+
+.feels-like-text {
+  font-family: Helvetica,  Arial,  sans-serif;
+  font-size: 12px;
+
+}
+
+.feels-like {
+  margin-top: 4px;
+  font-family: Helvetica,  Arial,  sans-serif;
+  font-size: 12px;
+  height: 12px;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin-left: 8px;
 }
