@@ -107,6 +107,89 @@ html, body, #app {
   margin: 20px;
   border-radius: 14px;
   border: .5px solid;
+  display: flex;
+  flex-direction: row;
+}
+
+.p-vertical-line {
+  height: 370px;
+  border: .1px solid black;
+  margin-top: 25px;
+  margin-left: 5%;
+  margin-right: auto;
+}
+
+.text-box {
+  width: 40%;
+  margin-left: 5%;
+  height: 260px;
+  margin-top: 25px;
+  display: table;
+}
+
+.p-text {
+  font-family: Helvetica,  Arial,  sans-serif;
+  font-size: .8vw;
+  line-height: 20px;
+  display: table-cell;
+}
+
+b {
+  font-size: .6vw;
+}
+
+.text-box-right {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dyk-quote {
+  margin-top: 5px;
+}
+
+.p-top-right {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.p-top-right-logo {
+  margin-right: -20px;
+  z-index: 1000;
+  right: 0;
+  margin-left: auto;
+  overflow: auto;
+  margin-top: -12px;
+}
+
+.p-logo {
+  width: 90px;
+  height: 130px;
+}
+
+.p-top-right-lines {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.p-horizontal-line{
+
+  border: .5px solid;
+  width: 100%;
+  margin-top: 35px;
+}
+
+.p-long-horizontal-line{
+  margin-right: auto;
+  margin-left: 20px;
+  border: .5px solid;
+  width: 80%;
+  margin-top: 35px;
 }
 
 .quote-container {

@@ -24,12 +24,11 @@ class App extends React.Component {
     this.props.dispatch(releaseIndicator())
         setTimeout(() =>{
             this.props.dispatch(destroyIndicator())
-            console.log('hi')
           }, 5000)
   }
 
   render () {
-    if (!this.props.waitIndicator) {
+    if (!this.props.waitIndicator && this.props.getWeather) {
       return(
         <div className='app-container'>
         <Weather />
@@ -45,6 +44,7 @@ class App extends React.Component {
     } else {
       return (
         <div className='app-container'>
+                <Weather />
            <WaitIndicator />
         </div>
       )
@@ -56,7 +56,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-      waitIndicator: state.waitIndicator
+      waitIndicator: state.waitIndicator,
+      getWeather: state.getWeather
   }
 }
 
