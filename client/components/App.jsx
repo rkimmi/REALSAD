@@ -24,7 +24,7 @@ class App extends React.Component {
     this.props.dispatch(releaseIndicator())
         setTimeout(() =>{
             this.props.dispatch(destroyIndicator())
-          }, 5000)
+          }, 1000)
   }
 
   render () {

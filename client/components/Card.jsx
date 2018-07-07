@@ -55,13 +55,13 @@ class Card extends React.Component {
             const degrees = this.props.getWeather.temp_c
             let clothing = 4
             if (degrees >= 4 && degrees <= 9) {
-                clothing = 4
-            }
-            if (degrees >= 9 && degrees <= 14) {
                 clothing = 3
             }
-            if (degrees >= 14 && degrees <= 19) {
+            if (degrees >= 9 && degrees <= 14) {
                 clothing = 2
+            }
+            if (degrees >= 14 && degrees <= 19) {
+                clothing = 1
             }
             if (degrees >= 19 && degrees <= 23) {
                 clothing = 1
@@ -90,22 +90,26 @@ class Card extends React.Component {
         return (
             <div className='card-container' onClick={this.toggleCard} >
                 <div className='postcard' >
+                <div className='p-left-container'>
+                <p className='note-timestamp'> <b>{this.props.getWeather.last_updated}</b> </p>
                     <div className='text-box'>
                         <p className='p-text'>
-                            <br />
-                            Dear receiver, <br /><br />
+                           Dear Angel, <br /><br />
 
-                            At <b>WELLBEING ANALYSIS TECHNIQUES LIMITED </b>, we recognise the positive and negative effects our climate has on your health. <br /> <br />
+                            At <b>WELLBEING ANALYSIS TECHNIQUES LIMITED </b>, we recognise the positive and negative effects the climate has on our health. <br /> <br />
 
-                            It is {this.state.condition} in <b>AUCKLAND CITY</b> today, and currently {this.props.getWeather.temp_c} degrees Celsius.
+                            The condition is {this.state.condition} in <b>AUCKLAND CITY</b> today, and currently {this.props.getWeather.temp_c} degrees Celsius.
                              <b> WELLBEING ANALYSIS TECHNIQUES LIMITED</b> recommends wearing at least {this.state.clothing} layers of clothing. <br /> <br />
 
                             And remember, <br />
                             <p className='dyk-quote'><i>{this.state.quote}</i></p>
-                            <br />xoxo <br />
+                            <br />xoxo 
+                           
                             {/* <b>WELLBEING ANALYSIS TECHNIQUES LIMITED</b> */}
                         </p>
                     </div>
+                    </div>
+
                     <div className='p-vertical-line' />
                     <div className='text-box-right'>
                         <div className='p-top-right'>

@@ -84,6 +84,7 @@ html, body, #app {
     display: flex;
     justify-content: center;
     align-content: center;
+    cursor: url('./images/whitebluebaby.png') 4 12, auto;
 }
 
 .card {
@@ -111,17 +112,20 @@ html, body, #app {
   flex-direction: row;
 }
 
+.p-left-container {
+  width: 50%;
+}
 .p-vertical-line {
   height: 370px;
   border: .1px solid black;
   margin-top: 25px;
-  margin-left: 5%;
+
   margin-right: auto;
 }
 
 .text-box {
-  width: 40%;
-  margin-left: 5%;
+  width: 87%;
+  margin-left: 6%;
   height: 260px;
   margin-top: 25px;
   display: table;
@@ -138,7 +142,16 @@ b {
   font-size: .6vw;
 }
 
+.note-timestamp {
+  width: 30%;
+  height: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-right: auto;
+  margin-left: 70%;
+}
+
 .text-box-right {
+
   height: 100%;
   width: 50%;
   display: flex;
