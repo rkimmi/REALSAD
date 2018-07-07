@@ -12,7 +12,9 @@ class Weather extends React.Component {
         this.getWeather = this.getWeather.bind(this)
     }
     componentWillMount() {
-        this.getWeather()
+        if (!this.props.getWeather) {
+            this.getWeather()
+        }
     }
 
     getWeather() {

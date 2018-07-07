@@ -8,9 +8,11 @@ class Card extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            postcardShowing: true,
             image: '',
-            quote: ''
+            quote: '',
         }
+        this.toggleCard = this.toggleCard.bind(this)
         this.getQuote = this.getQuote.bind(this)
         this.getImage = this.getImage.bind(this)
         this.getAll = this.getAll.bind(this)
@@ -19,6 +21,16 @@ class Card extends React.Component {
     componentWillMount() {
         this.getQuote()
         this.getImage()
+    }
+
+    toggleCard () {
+        this.state.postcardShowing ? 
+        this.setState({
+            postcardShowing: false
+        }) :
+        this.setState({
+            postcardShowing: true
+        }) 
     }
 
     getAll() {
@@ -37,21 +49,29 @@ class Card extends React.Component {
     }
 
     render() {
+        if (!this.state.postcardShowing) {
+            const style = { backgroundImage: `url(${this.state.image})` }
+            return (
+                <div className='card-container' onClick={this.toggleCard}>
+                    <div className='card' style={style} alt='' />
+                    <div className='quote-container' >
+                        <h1 className='quote'>
+                            {this.state.quote}
+                        </h1>
+                    </div>
+                </div>
+            )
+        }
         return (
-            <div>
-            <div className='card-container'  onClick={this.getAll}>
-                <img className='card' src={this.state.image} alt=''/>
-                <div className='quote-container' >
-                    <h1 className='quote'>
-                        {this.state.quote}
-                    </h1>
-                    
+            <div className='card-container' onClick={this.toggleCard} >
+                <div className='postcard' >
+                    <div className='postcard-text' />
                 </div>
             </div>
-            </div>
-        )
-    }
 
+        )
+
+    }
 }
 
 export default Card
