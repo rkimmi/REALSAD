@@ -55,13 +55,13 @@ class Card extends React.Component {
             const degrees = this.props.getWeather.temp_c
             let clothing = 4
             if (degrees >= 4 && degrees <= 9) {
-                clothing = 3
+                clothing = 4
             }
             if (degrees >= 9 && degrees <= 14) {
-                clothing = 2
+                clothing = 3
             }
             if (degrees >= 14 && degrees <= 19) {
-                clothing = 1
+                clothing = 2
             }
             if (degrees >= 19 && degrees <= 23) {
                 clothing = 1

@@ -2,12 +2,15 @@ import React from 'react'
 
 import {connect} from 'react-redux'
 
+import Icon from './Icon'
+
 class Info extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            infoShowing: true,
+            infoShowing: true
         }
+
     }
 
     render() {
@@ -30,13 +33,18 @@ class Info extends React.Component {
                                     </div>
                                     <div className='vertical-line' />
                                     <div className='feels-like-container' >
-                                    <div className='feels-like-text'> feels like</div>
-                                    <div className='feels-like'>
-                                        {`${this.props.getWeather.feelslike_c}°C`}
-                                    </div>
+                                        <div className='feels-like-text'> feels like: </div>
+                                        <div className='feels-like'>
+                                            {`${this.props.getWeather.feelslike_c}°C`}
+                                        </div>
                                     </div>
                                 </div>
-                                <img className='icon' src={'/images/icons/sun.png'} />
+                                <div className='icon-container'>
+                                <Icon />
+                                <div className='humidity-text'>humidity:
+                                <div className='humidity'>{`${this.props.getWeather.humidity}%`}</div>
+                                </div>
+                                </div>
                             </div>
                         </div>
                         <div className='info-showing-tab' >

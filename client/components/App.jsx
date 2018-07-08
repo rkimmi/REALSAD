@@ -21,10 +21,11 @@ class App extends React.Component {
   }
 
   toggleIndicator () {
-    this.props.dispatch(releaseIndicator())
-        setTimeout(() =>{
-            this.props.dispatch(destroyIndicator())
-          }, 1000)
+    this.props.dispatch(releaseIndicator()) // changed - only destroy if have weatherObj
+      setTimeout(() =>{
+        this.props.dispatch(destroyIndicator())
+      }, 1000)
+
   }
 
   render () {
