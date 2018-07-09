@@ -7,6 +7,7 @@ import Header from './Header'
 import Info from './Info'
 import WaitIndicator from './WaitIndicator'
 import Weather from './Weather'
+
 import {releaseIndicator, destroyIndicator} from '../actions/waitIndicator'
 
 
@@ -24,7 +25,7 @@ class App extends React.Component {
     this.props.dispatch(releaseIndicator()) // changed - only destroy if have weatherObj
       setTimeout(() =>{
         this.props.dispatch(destroyIndicator())
-      }, 1000)
+      }, 5000)
 
   }
 
@@ -33,11 +34,14 @@ class App extends React.Component {
       return(
         <div className='app-container'>
         <Weather />
+
           <div className='background' />
           <Header />
           <div className='body-container'>
                 <Info />
+
                 <Card />
+                
             </div>
           <Footer />
         </div>
@@ -45,7 +49,7 @@ class App extends React.Component {
     } else {
       return (
         <div className='app-container'>
-                <Weather />
+            <Weather />
            <WaitIndicator />
         </div>
       )

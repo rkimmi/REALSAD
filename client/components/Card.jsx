@@ -88,24 +88,25 @@ class Card extends React.Component {
             )
         } 
         return (
+            
             <div className='card-container' onClick={this.toggleCard} >
                 <div className='postcard' >
                 <div className='p-left-container'>
-                <p className='note-timestamp'> <b>{this.props.getWeather.last_updated}</b> </p>
+                <p className='note-timestamp'> <b className='p-bold'>{this.props.getWeather.last_updated}</b> </p>
                     <div className='text-box'>
                         <p className='p-text'>
                            Dear Angel, <br /><br />
 
-                            At <b>WELLBEING ANALYSIS TECHNIQUES LIMITED </b>, we recognise the positive and negative effects the climate has on our health. <br /> <br />
+                            At <b className='p-bold'>WELLBEING ANALYSIS TECHNIQUES LIMITED </b>, we recognise the positive and negative effects that climate has on our health. <br /> <br />
 
-                            The condition is {this.state.condition} in <b>AUCKLAND CITY</b> today, and currently {this.props.getWeather.temp_c} degrees Celsius.
-                             <b> WELLBEING ANALYSIS TECHNIQUES LIMITED</b> recommends wearing at least {this.state.clothing} layers of clothing. <br /> <br />
+                            The condition is {this.state.condition} in <b className='p-bold'>AUCKLAND CITY</b> today, and currently {this.props.getWeather.temp_c} degrees Celsius.
+                             <b className='p-bold'> WELLBEING ANALYSIS TECHNIQUES LIMITED</b> recommends wearing at least {this.state.clothing} layers of clothing. <br /> <br />
 
                             And remember, <br />
                             <p className='dyk-quote'><i>{this.state.quote}</i></p>
                             <br />xoxo 
                            
-                            {/* <b>WELLBEING ANALYSIS TECHNIQUES LIMITED</b> */}
+                            {/* <b className='p-bold'>WELLBEING ANALYSIS TECHNIQUES LIMITED</b> */}
                         </p>
                     </div>
                     </div>
