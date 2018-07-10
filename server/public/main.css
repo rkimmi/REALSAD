@@ -282,7 +282,7 @@ b.p-bold {
 }
 
 
-.logo-false:hover, .logo-true:hover {
+.logo:hover {
   /* animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform:  translateZ(0); */
   -webkit-animation-name: pulse;
@@ -472,7 +472,7 @@ b.p-bold {
   font-size: 12px;
   margin-left: 22.5%;
   margin-top: 10px;
-  margin-left: 16%;
+  margin-left: 14%;
 }
 
 .humidity {

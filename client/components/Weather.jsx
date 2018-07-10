@@ -19,9 +19,8 @@ class Weather extends React.Component {
     }
 
     getWeather() {
-        console.log(`http://api.apixu.com/v1/current.json?key=${apiKey}`)
         request
-            .get(`http://api.apixu.com/v1/current.json?key=${apiKey}`)
+            .get(`https://api.apixu.com/v1/current.json?key=${apiKey}`)
             .set('Accept', 'application/json')
             .then(res => 
                 
