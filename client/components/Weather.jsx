@@ -2,6 +2,7 @@ import React from 'react'
 import request from 'superagent'
 
 import {connect} from 'react-redux'
+const apiKey = process.env.WEATHER_API_KEY
 
 import { getWeather } from '../actions/getWeather'
 
@@ -18,10 +19,12 @@ class Weather extends React.Component {
     }
 
     getWeather() {
+        console.log(`http://api.apixu.com/v1/current.json?key=${apiKey}`)
         request
-            .get('http://api.apixu.com/v1/current.json?key=c019052f11644461a6c21207183003&q=Auckland')
+            .get(`http://api.apixu.com/v1/current.json?key=${apiKey}`)
             .set('Accept', 'application/json')
             .then(res => 
+                
                 this.props.dispatch(getWeather(res.body))
             )
     }
