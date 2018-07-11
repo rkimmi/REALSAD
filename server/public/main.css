@@ -16,6 +16,10 @@ html, body, #app {
     flex-direction: column;
     background-size: cover;
     background-color: #fffef9;
+    overflow-y: scroll;
+    position:relative;
+    height: 100%;
+
 }
 
 
@@ -71,6 +75,10 @@ html, body, #app {
     display: flex;
     flex-direction: row;
     width: 100%;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    position:relative;
+    height: 100%;
 }
 
 .card-container {
@@ -154,13 +162,13 @@ html, body, #app {
 
 .p-text {
   font-family: Helvetica,  Arial,  sans-serif;
-  font-size: .8vw;
+  font-size: 70%;
   line-height: 20px;
   display: table-cell;
 }
 
 b.p-bold {
-  font-size: .6vw;
+  font-size: 70%;
 }
 
 
@@ -247,7 +255,6 @@ b.p-bold {
     font-size: 40px;
     font-family: 'Tangerine', cursive;
     background-color: rgba(103, 103, 107, 0.62);
-    text-indent: 10px;
     color: white;
     width: 100%;
     padding-top: 5px;
