@@ -4,10 +4,10 @@ html, body, #app {
     /* z-index: 4;
     /* position:relative;  */
     padding:0;
-    overflow:hidden;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .app-container {
@@ -88,7 +88,7 @@ html, body, #app {
 .card-container {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 65px;
+  margin-top: 70px;
   position: relative;
   width: 72%;
   height: 500px;
@@ -397,13 +397,13 @@ a:hover {
     display: flex;
     align-content: center;
     justify-content: center;
-    bottom: -35px;
+    bottom: 0px;
     padding: 25px;
     background-color: #fffef9;
     /* clear: both; */
-    position: absolute;
-    height: 3em;
-    margin-top: -3em;
+    position: relative;
+    height: 22px; 
+    margin-top: -0em; 
     /* position: relative; */
 }
 
