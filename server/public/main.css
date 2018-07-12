@@ -557,6 +557,25 @@ b.info-bold {
   line-height: 18px;
 }
 
+.play-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 80%;
+  border: 1px dashed black;
+  /* margin: 50px; */
+  cursor: pointer;
+  margin-top: 70px;
+}
+.play {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 12px solid #f8c729;
+  margin-left: 9px;
+  margin-top: 7px;
+}
+
 .sound-inspo-container {
   display: flex;
   flex-direction: column;

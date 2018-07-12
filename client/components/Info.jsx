@@ -8,13 +8,18 @@ import Sound from 'react-sound'
 class Info extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { }
+        this.state = { playing: Sound.status.PLAYING }
         this.getIconPlusSound = this.getIconPlusSound.bind(this)
+        this.playSound = this.playSound.bind(this)
     }
 
     componentDidMount() {
         this.props.getWeather &&
         this.getIconPlusSound()
+    }
+
+    playSound() {
+        this.setState({playing: Sound.status.PLAYING})
     }
 
     getIconPlusSound() {
@@ -136,7 +141,7 @@ class Info extends React.Component {
             return (
                 <div className='info-everything'>
                 <Sound url={this.state.sound} 
-                playStatus={Sound.status.PLAYING}
+                playStatus={this.state.playing}
                 loop={true}
                 />
                     <img className={`logo`} src='./images/babyangel.png' />
@@ -166,6 +171,7 @@ class Info extends React.Component {
                                 <div className='humidity-text'>humidity:
                                 <div className='humidity'>{`${this.props.getWeather.humidity}%`}</div>
                                     </div>
+                                    <div className='play-circle' onClick={this.playSound}><div className='play'/></div>
                                 </div>
                                 <div className='sound-info-container'>
                                     <div className='now-playing'>
