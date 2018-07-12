@@ -8,7 +8,7 @@ import Sound from 'react-sound'
 class Info extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { playing: Sound.status.PLAYING, clicked: false }
+        this.state = { playing: Sound.status.PAUSED, clicked: false }
         this.getIconPlusSound = this.getIconPlusSound.bind(this)
         this.playSound = this.playSound.bind(this)
     }
