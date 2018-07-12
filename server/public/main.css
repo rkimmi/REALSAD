@@ -135,7 +135,6 @@ html, body, #app {
   height: 420px;
   box-shadow: 6px 6px 6px rgba(0,0,0,0.6);
   opacity: 0.9;
-  margin-left: 20px;
   border-radius: 14px;
   border: .5px solid;
   display: flex;
