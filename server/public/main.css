@@ -560,7 +560,7 @@ b.info-bold {
   width: 30px;
   height: 30px;
   border-radius: 80%;
-  border: 1px dashed black;
+  background-color: #9090b3;
   /* margin: 50px; */
   cursor: pointer;
   margin-top: 70px;
@@ -584,9 +584,10 @@ b.info-bold {
   height: 0;
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
-  border-left: 12px solid #f8c729;
-  margin-left: 9px;
+  border-left: 12px solid #fff;
+  margin-left: 10px;
   margin-top: 7px;
+  border-radius: 1px;
 }
 
 .sound-inspo-container {
