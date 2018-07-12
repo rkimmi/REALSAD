@@ -11,7 +11,7 @@ class waitIndicator extends React.Component {
     render() {
         return (
             <div className='waiting-container' >
-            <img className='waiting-spinning' src='images/whitebluebaby.png'/>
+            <img className='waiting-spinning' src='images/babyangel.png'/>
             </div>
         )
     }

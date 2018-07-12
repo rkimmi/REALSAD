@@ -24,76 +24,110 @@ class Info extends React.Component {
         let icon = ''
         let sound = ''
         let nowPlaying = ''
+        let associativeSound = ''
+        let feelingSound = ''
+        let instrumentSound = ''
         
-        // switch(weatherText) {
-        //     case indexOf('snow'):
-        //     console.log('snow')
-        //     icon = '/images/icons/heavyrain.png'
-        //     sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
-        //     nowPlaying = 'SNOW'
-        // }
         if (weatherText.indexOf('shower') >= 0) {
             icon = '/images/icons/raining.png'
             sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
             nowPlaying = 'RAINY'
+            associativeSound = 'Crowd Applause (slowed to sound wet)'
+            feelingSound = 'Whales/Sticky mud'
+            instrumentSound = 'Bass Guitar'
         } 
         else if (weatherText.indexOf('rain') >= 0) {
             icon = '/images/icons/raining.png'
             sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
             nowPlaying = 'RAINY'
+            associativeSound = 'Crowd Applause (slowed to sound wet)'
+            feelingSound = 'Whales/Sticky mud'
+            instrumentSound = 'Bass Guitar'
         } 
         else if (weatherText.indexOf('storm') >= 0) {
             icon = '/images/icons/heavyrain.png'
             sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
             nowPlaying = 'STORM'
+            associativeSound = 'Crowd Applause (slowed to sound wet)'
+            feelingSound = 'Whales/Sticky mud'
+            instrumentSound = 'Bass Guitar'
         } 
         else if (weatherText.indexOf('thunder') >= 0) {
-            console.log('rain')
             icon = '/images/icons/heavyrain.png'
             sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
             nowPlaying = 'STORM'
+            associativeSound = 'Crowd Applause (slowed to sound wet)'
+            feelingSound = 'Whales/Sticky mud'
+            instrumentSound = 'Bass Guitar'
         } 
         else if (weatherText.indexOf('snow') >= 0) {
-            console.log('rain')
             icon = '/images/icons/heavyrain.png'
             sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
             nowPlaying = 'SNOW'
+            associativeSound = 'Crowd Applause (slowed to sound wet)'
+            feelingSound = 'Whales/Sticky mud'
+            instrumentSound = 'Bass Guitar'
         } 
         else if (weatherText.indexOf('thunder') >= 0) {
             icon = '/images/icons/heavyrain.png'
             sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
             nowPlaying = 'RAINY'
+            associativeSound = 'Crowd Applause (slowed to sound wet)'
+            feelingSound = 'Whales/Sticky mud'
+            instrumentSound = 'Bass Guitar'
         }
         else if (weatherText.indexOf('cast') >= 0) {
             icon = './images/icons/overcast.png'
             sound = '/sounds/Purple_Centering_Prayer.wav'
+            associativeSound = 'Wind through creaking trees'
+            feelingSound = 'Dry branches breaking as you walk on them'
+            instrumentSound = 'Cello'
             nowPlaying = 'OVERCAST'
         }
          else if (weatherText.indexOf('cloud') >= 0) {
             icon = '/images/icons/cloudy.png'
             sound = '/sounds/Buddhist_Mindscape_Hand.wav'
-            nowPlaying = 'CLOUDY'
+            nowPlaying ='CLOUDY'
+            associativeSound = 'Flags in Wind'
+            feelingSound = 'Bat Wings Flapping'
+            instrumentSound = 'Moog Modular Synth'
          }
          else if (weatherText.indexOf('sun') >= 0) {
             icon = '/images/icons/sunny.png'
             sound = '/sounds/Chakratic_Appearance_Crystal.wav'
             nowPlaying = 'SUNNY'
+            associativeSound = 'Birds Songs/Chirping'
+            feelingSound = 'Campfires'
+            instrumentSound = 'C80 Soft Analog Synth (Pad)'
+         }
+        else if (weatherText.indexOf('clear') >= 0) {
+            icon = '/images/icons/sunny.png'
+            sound = '/sounds/Chakratic_Appearance_Crystal.wav'
+            nowPlaying = 'SUNNY'
+            associativeSound = 'Birds Songs/Chirping'
+            feelingSound = 'Campfires'
+            instrumentSound = 'C80 Soft Analog Synth (Pad)'
         } else {
             icon = '/images/icons/overcast.png'
             sound = '/sounds/Purple_Centering_Prayer.wav'
             nowPlaying = 'OVERCAST'
+            associativeSound = 'Wind through creaking tress'
+            feelingSound = 'Dry branches breaking as you walk on them'
+            instrumentSound = 'Cello'
         }
 
         const soundName = sound.substr(8)
         const trackTitle = soundName.slice(0, -4);
         const fullTitle = trackTitle.replace(/[_]/g,' ')
 
-
         this.setState({
             icon: icon,
             sound: sound,
             soundName: fullTitle,
-            nowPlaying: nowPlaying
+            nowPlaying: nowPlaying,
+            associativeSound: associativeSound,
+            feelingSound: feelingSound,
+            instrumentSound: instrumentSound
         })
     }
 
@@ -105,7 +139,7 @@ class Info extends React.Component {
                 playStatus={Sound.status.PLAYING}
                 loop={true}
                 />
-                    <img className={`logo`} src='./images/whitebluebaby.png' />
+                    <img className={`logo`} src='./images/babyangel.png' />
                     <div className='info-container'>
                         <div className='info-content'>
                             <div className='temperature-container'>
@@ -140,7 +174,17 @@ class Info extends React.Component {
                                        
                                     </div>
                                     <div className='track-text'> {this.state.soundName}</div>
-                                    
+                                    <div className='sound-inspo-container'>
+                                    <div className='sound-info-line'>
+                                    <b className='inspo-bold'>ASSOCIATIVE SOUND:</b> <div className='inspo'>{this.state.associativeSound}</div>
+                                    </div>
+                                    <div className='sound-info-line'>
+                                    <b className='inspo-bold'>FEELING SOUND:</b> <div className='inspo'>{this.state.feelingSound}</div>
+                                    </div>
+                                    <div className='sound-info-line'>
+                                    <b className='inspo-bold'>INSTRUMENT SOUND:</b> <div className='inspo'>{this.state.instrumentSound}</div>
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

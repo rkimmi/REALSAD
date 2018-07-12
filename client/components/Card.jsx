@@ -92,7 +92,7 @@ class Card extends React.Component {
             <div className='card-container' onClick={this.toggleCard} >
                 <div className='postcard' >
                 <div className='p-left-container'>
-                <p className='note-timestamp'> <b className='p-bold'>{this.props.getWeather.last_updated}</b> </p>
+                <p className='note-timestamp'> <b className='p-small'>{this.props.getWeather.last_updated}</b> </p>
                     <div className='text-box'>
                         <p className='p-text'>
                            Dear Angel, <br /><br />

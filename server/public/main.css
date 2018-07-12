@@ -84,7 +84,7 @@ html, body, #app {
 .card-container {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 95px;
+  margin-top: 65px;
   position: relative;
   width: 72%;
   height: 500px;
@@ -170,6 +170,11 @@ html, body, #app {
 b.p-bold {
   font-size: 70%;
 }
+
+b.p-small {
+  font-size: 60%;
+}
+
 
 
 .note-timestamp {
@@ -265,10 +270,11 @@ b.p-bold {
 
 .header-container {
     width: 100%;
-    height: 120px;
+    height: 242px;
     background-color: #9E9EF3;
     opacity: 0.9;
     background-image: linear-gradient(#9E9EF3, #fffef9);
+
 }
 
 .header {
@@ -279,13 +285,43 @@ b.p-bold {
     font-size: 26px;
 }
 
+.header-smalltext-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: whitesmoke;
+  padding-top: 26px;
+  padding-left: 40px;
+
+  font-family: Helvetica,  Arial,  sans-serif;
+
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #9E9EF3;
+}
+
+.header-smalltext {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.header-link {
+  font-size: 14px;
+}
+
 .logo{
     width: 140px;
     height: 200px;
-    padding-top: 30px;
     padding-left: 120px;
     margin-bottom: -140px;
     margin-left: 90px;
+
 }
 
 
@@ -478,7 +514,7 @@ b.p-bold {
   font-family: Helvetica,  Arial,  sans-serif;
   font-size: 12px;
   margin-top: 10px;
-  margin-left: 6.5%;
+  margin-left: 14.5%;
 }
 
 .humidity {
@@ -487,9 +523,9 @@ b.p-bold {
 
 .sound-info-container {
   width: 93%;
-  height: 140px;
+  height: 150px;
   border: 1px dashed;
-  margin-top: 14%;
+  margin-top: 12%;
   border-top-right-radius: 14px;
   border-bottom-right-radius: 14px;
   margin-right: auto;
@@ -502,7 +538,7 @@ b.p-bold {
   height: 25%;
   font-family: Helvetica,  Arial,  sans-serif;
   font-size: 14px;
-  margin: 20px;
+  margin: 10px;
   font-size: 11px;
   color: #d2ab2c;
 }
@@ -513,12 +549,38 @@ b.info-bold {
   line-height: 18px;
 }
 
+.sound-inspo-container {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  margin-left: auto;
+}
+
+.sound-info-line {
+  display: flex;
+  flex-direction: row;
+}
+
+b.inspo-bold, .inspo {
+  font-style: inherit;
+  font-size: 8px;
+  margin-top: 5px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #d2ab2c;
+  margin-left: 10px;
+}
+
+.inspo {
+
+}
+
 .track-text {
   font-family: 'Tangerine', cursive;
   font-size: 24px;
-  margin-top: -9px;
+  margin-top: -2px;
   margin-left: 17%;
   color: #d2ab2c;
+  margin-bottom: 8px;
 }
 
 .sound-icon {
