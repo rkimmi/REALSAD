@@ -8,7 +8,7 @@ import Sound from 'react-sound'
 class Info extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { playing: Sound.status.PLAYING }
+        this.state = { playing: Sound.status.PLAYING, clicked: false }
         this.getIconPlusSound = this.getIconPlusSound.bind(this)
         this.playSound = this.playSound.bind(this)
     }
@@ -19,7 +19,7 @@ class Info extends React.Component {
     }
 
     playSound() {
-        this.setState({playing: Sound.status.PLAYING})
+        this.setState({playing: Sound.status.PLAYING, clicked: true})
     }
 
     getIconPlusSound() {
@@ -171,7 +171,7 @@ class Info extends React.Component {
                                 <div className='humidity-text'>humidity:
                                 <div className='humidity'>{`${this.props.getWeather.humidity}%`}</div>
                                     </div>
-                                    <div className='play-circle' onClick={this.playSound}><div className='play'/></div>
+                                    <div className={`play-circle-${this.state.clicked}`} onClick={this.playSound}><div className='play'/></div>
                                 </div>
                                 <div className='sound-info-container'>
                                     <div className='now-playing'>

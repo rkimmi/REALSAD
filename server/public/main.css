@@ -557,7 +557,7 @@ b.info-bold {
   line-height: 18px;
 }
 
-.play-circle {
+.play-circle-false {
   width: 30px;
   height: 30px;
   border-radius: 80%;
@@ -566,6 +566,20 @@ b.info-bold {
   cursor: pointer;
   margin-top: 70px;
 }
+
+.play-circle-false:hover {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  backface-visibility: hidden;
+  perspective: 500px;
+}
+
+.play-circle-true {
+  display: none;
+}
+
 .play {
   width: 0;
   height: 0;
