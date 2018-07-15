@@ -557,8 +557,8 @@ b.info-bold {
 }
 
 .play-circle-false {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 80%;
   background-color:#cfcfee;
   /* margin: 50px; */
@@ -572,7 +572,7 @@ b.info-bold {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   backface-visibility: hidden;
-  perspective: 500px;
+  perspective: 1000px;
 }
 
 .play-circle-true {
@@ -585,8 +585,8 @@ b.info-bold {
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
   border-left: 12px solid #fff;
-  margin-left: 10px;
-  margin-top: 7px;
+  margin-left: 15px;
+  margin-top: 12px;
   border-radius: 1px;
 }
 
