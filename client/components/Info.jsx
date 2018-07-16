@@ -97,7 +97,7 @@ class Info extends React.Component {
             feelingSound = 'Bat Wings Flapping'
             instrumentSound = 'Moog Modular Synth'
          }
-         else if (weatherText.indexOf('sun') >= 0) {
+         else if (weatherText.indexOf('sunny') >= 0) {
             icon = '/images/icons/sunny.png'
             sound = '/sounds/Chakratic_Appearance_Crystal.wav'
             nowPlaying = 'SUNNY'
