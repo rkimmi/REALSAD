@@ -89,7 +89,15 @@ class Info extends React.Component {
             instrumentSound = 'Cello'
             nowPlaying = 'OVERCAST'
         }
-         else if (weatherText.indexOf('cloud') >= 0) {
+         else if (weatherText.indexOf('cloudy') >= 0) {
+            icon = '/images/icons/cloudy.png'
+            sound = '/sounds/Buddhist_Mindscape_Hand.wav'
+            nowPlaying ='CLOUDY'
+            associativeSound = 'Flags in Wind'
+            feelingSound = 'Bat Wings Flapping'
+            instrumentSound = 'Moog Modular Synth'
+         }
+         else if (weatherText.indexOf('partly cloudy') >= 0) {
             icon = '/images/icons/cloudy.png'
             sound = '/sounds/Buddhist_Mindscape_Hand.wav'
             nowPlaying ='CLOUDY'

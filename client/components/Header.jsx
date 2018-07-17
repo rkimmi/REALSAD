@@ -12,6 +12,7 @@ const Header = () => {
         <a href='http://windowgallery.co.nz/exhibitions/strange-islands-online'>View on Window Gallery.</a>
         </div>
         </div>
+
         </div>
     )
 }

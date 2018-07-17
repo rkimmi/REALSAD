@@ -19,12 +19,17 @@ class Card extends React.Component {
         this.getQuote = this.getQuote.bind(this)
         this.getImage = this.getImage.bind(this)
         this.getWeatherInfo = this.getWeatherInfo.bind(this)
+        this.handleDblClick = this.handleDblClick.bind(this)
     }
 
     componentWillMount() {
         this.getQuote()
         this.getImage()
         this.getWeatherInfo()
+    }
+
+    handleDblClick () {
+        this.forceUpdate()
     }
 
     toggleCard() {
@@ -89,7 +94,7 @@ class Card extends React.Component {
         } 
         return (
             
-            <div className='card-container' onClick={this.toggleCard} >
+            <div className='card-container' onClick={this.toggleCard}>
                 <div className='postcard' >
                 <div className='p-left-container'>
                 <p className='note-timestamp'> <b className='p-small'>{this.props.getWeather.last_updated}</b> </p>

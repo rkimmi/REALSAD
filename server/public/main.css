@@ -294,9 +294,19 @@ b.p-small {
   color: whitesmoke;
   padding-top: 26px;
   padding-left: 40px;
-
   font-family: Helvetica,  Arial,  sans-serif;
 
+}
+
+.header-info-text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: #9E9EF3;
+  padding-top: 26px;
+  padding-left: 40px;
+  font-family: Helvetica,  Arial,  sans-serif;
+  font-size: 12px;
 }
 
 a {
@@ -411,6 +421,9 @@ a:hover {
     color:  #9E9EF3;
     font-family: Helvetica,  Arial,  sans-serif;
     font-size: 12px;
+    text-align: center;
+    margin-top: 8px;
+    line-height: 18px;
 }
 
 .info-everything {
@@ -521,7 +534,7 @@ a:hover {
   font-family: Helvetica,  Arial,  sans-serif;
   font-size: 12px;
   margin-top: 10px;
-  margin-left: 18px;
+  margin-left: 44px;
 }
 
 .humidity {
