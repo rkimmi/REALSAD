@@ -74,7 +74,7 @@ class Info extends React.Component {
     let trackTitle = c[status].audio.slice(0, -4);
     this.setState({
       icon: `images/icons/${c[status].icon}`,
-      sound: `sounds${c[status].audio}`,
+      sound: `sounds/${c[status].audio}`,
       soundName: trackTitle.replace(/[_]/g, ' '),
       nowPlaying: c[status].title,
       associativeSound: c[status].assoc,
