@@ -14,18 +14,17 @@ class Info extends React.Component {
       sound: '',
       soundName: '',
       nowPlaying: '',
-      associativeSound: '',
-      feelingSound: '',
-      instrumentSound: ''
+      assocSound: '',
+      feelSound: '',
+      instrSound: ''
     }
     this.getIconPlusSound = this.getIconPlusSound.bind(this)
     this.playSound = this.playSound.bind(this)
   }
 
   componentDidMount() {
-    const { weather } = this.props
-    weather &&
-      this.getIconPlusSound()
+
+    this.getIconPlusSound()
   }
 
   playSound() {
@@ -77,29 +76,32 @@ class Info extends React.Component {
       sound: `sounds/${c[status].audio}`,
       soundName: trackTitle.replace(/[_]/g, ' '),
       nowPlaying: c[status].title,
-      associativeSound: c[status].assoc,
-      feelingSound: c[status].feeling,
-      instrumentSound: c[status].instr
+      assocSound: c[status].assoc,
+      feelSound: c[status].feeling,
+      instrSound: c[status].instr
     })
   }
 
   render() {
     const { weather } = this.props
+    const {
+      sound, playing, icon, clicked, assocSound, feelSound, instrSound, nowPlaying, soundName
+    } = this.state
     if (weather) {
       return (
         <div className='info-everything'>
-          <Sound url={this.state.sound}
-            playStatus={this.state.playing}
+          <Sound url={sound}
+            playStatus={playing}
             loop={true}
           />
-          <img className={`logo`} src='./images/babyangel.png' />
+          <img className='logo' src='./images/babyangel.png' />
           <div className='info-container'>
             <div className='info-content'>
               <div className='temperature-container'>
                 <div className='title-table'>
                   <div className='title'>
                     Today's Weather
-                                </div>
+                  </div>
                 </div>
                 <div className='horizontal-line' />
                 <div className='temperature'>
@@ -115,27 +117,27 @@ class Info extends React.Component {
                   </div>
                 </div>
                 <div className='icon-container'>
-                  <img className='icon' src={this.state.icon} />
+                  <img className='icon' src={icon} />
                   <div className='humidity-text'>humidity:
-                                <div className='humidity'>{`${weather.humidity}%`}</div>
+                      <div className='humidity'>{`${weather.humidity}%`}</div>
                   </div>
-                  <div className={`play-circle-${this.state.clicked}`} onClick={this.playSound}><div className='play' /></div>
+                  <div className={`play-circle-${clicked}`} onClick={this.playSound}><div className='play' /></div>
                 </div>
                 <div className='sound-info-container'>
                   <div className='now-playing'>
-                    <b className='info-bold'>NOW PLAYING: {this.state.nowPlaying} </b><br />
+                    <b className='info-bold'>NOW PLAYING: {nowPlaying} </b><br />
                     <b className='info-bold'>TRACK TITLE: </b>
                   </div>
-                  <div className='track-text'> {this.state.soundName}</div>
+                  <div className='track-text'> {soundName}</div>
                   <div className='sound-inspo-container'>
                     <div className='sound-info-line'>
-                      <b className='inspo-bold'>ASSOCIATIVE SOUND:</b> <div className='inspo'>{this.state.associativeSound}</div>
+                      <b className='inspo-bold'>ASSOCIATIVE SOUND:</b> <div className='inspo'>{assocSound}</div>
                     </div>
                     <div className='sound-info-line'>
-                      <b className='inspo-bold'>FEELING SOUND:</b> <div className='inspo'>{this.state.feelingSound}</div>
+                      <b className='inspo-bold'>FEELING SOUND:</b> <div className='inspo'>{feelSound}</div>
                     </div>
                     <div className='sound-info-line'>
-                      <b className='inspo-bold'>INSTRUMENT SOUND:</b> <div className='inspo'>{this.state.instrumentSound}</div>
+                      <b className='inspo-bold'>INSTRUMENT SOUND:</b> <div className='inspo'>{instrSound}</div>
                     </div>
                   </div>
                 </div>
