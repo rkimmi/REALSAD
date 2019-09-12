@@ -56,25 +56,27 @@ class Card extends React.Component {
 
   setWeather() {
     const { weather } = this.props
-    if (weather) {
-      const condition = weather.condition.text
-      const newCondition = _.lowerCase(condition)
-      const degrees = weather.temp_c
-      let clothing = 4
-      if (degrees >= 4 && degrees <= 9) {
+    const condition = weather.condition.text
+    const newCondition = _.lowerCase(condition)
+    let dc = weather.temp_c
+    let clothing = 4
+    switch (true) {
+      case (dc >= 4 && dc <= 9):
         clothing = 4
-      }
-      if (degrees >= 9 && degrees <= 14) {
+        break
+      case (dc >= 9 && dc <= 14):
         clothing = 3
-      }
-      if (degrees >= 14 && degrees <= 19) {
+        break
+      case (dc >= 14 && dc <= 19):
         clothing = 2
-      }
-      if (degrees >= 19 && degrees <= 23) {
+        break
+      case (dc >= 19 && dc <= 23):
         clothing = 1
-      }
-      this.setState({ condition: newCondition, clothing })
+        break
+      default:
+        clothing = 2
     }
+    this.setState({ condition: newCondition, clothing })
   }
   render() {
     const { postcardShowing, image, quote, condition, clothing } = this.state
