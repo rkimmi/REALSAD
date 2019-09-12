@@ -3,6 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import Sound from 'react-sound'
+import c from './config'
 
 
 class Info extends React.Component {
@@ -35,120 +36,50 @@ class Info extends React.Component {
     const { weather } = this.props
     let weatherText = weather.condition.text.toLowerCase()
     weatherText = weatherText.split(' ')
-    let icon = ''
-    let sound = ''
-    let nowPlaying = ''
-    let associativeSound = ''
-    let feelingSound = ''
-    let instrumentSound = ''
-    if (weatherText.indexOf('shower') >= 0) {
-      icon = '/images/icons/raining.png'
-      sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
-      nowPlaying = 'RAINY'
-      associativeSound = 'Crowd Applause (slowed to sound wet)'
-      feelingSound = 'Whales/Sticky mud'
-      instrumentSound = 'Bass Guitar'
+    let status = ''
+    switch (true) {
+      case (weatherText.indexOf('shower') >= 0):
+        status = 'RAINY'
+        break
+      case (weatherText.indexOf('rain') >= 0):
+        status = 'RAINY'
+        break
+      case (weatherText.indexOf('storm') >= 0):
+        status = 'STORM'
+        break
+      case (weatherText.indexOf('thunder') >= 0):
+        status = 'STORM'
+        break
+      case (weatherText.indexOf('snow') >= 0):
+        status = 'SNOW'
+        break
+      case (weatherText.indexOf('cast') >= 0):
+        status = 'OVERCAST'
+        break
+      case (weatherText.indexOf('cloudy') >= 0):
+        status = 'CLOUDY'
+        break
+      case (weatherText.indexOf('partly cloudy') >= 0):
+        status = 'CLOUDY'
+        break
+      case (weatherText.indexOf('sunny') >= 0):
+        status = 'SUNNY'
+        break
+      case (weatherText.indexOf('clear') >= 0):
+        status = 'SUNNY'
+        break
+      default:
+        status = 'OVERCAST'
     }
-    else if (weatherText.indexOf('rain') >= 0) {
-      icon = '/images/icons/raining.png'
-      sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
-      nowPlaying = 'RAINY'
-      associativeSound = 'Crowd Applause (slowed to sound wet)'
-      feelingSound = 'Whales/Sticky mud'
-      instrumentSound = 'Bass Guitar'
-    }
-    else if (weatherText.indexOf('storm') >= 0) {
-      icon = '/images/icons/heavyrain.png'
-      sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
-      nowPlaying = 'STORM'
-      associativeSound = 'Crowd Applause (slowed to sound wet)'
-      feelingSound = 'Whales/Sticky mud'
-      instrumentSound = 'Bass Guitar'
-    }
-    else if (weatherText.indexOf('thunder') >= 0) {
-      icon = '/images/icons/heavyrain.png'
-      sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
-      nowPlaying = 'STORM'
-      associativeSound = 'Crowd Applause (slowed to sound wet)'
-      feelingSound = 'Whales/Sticky mud'
-      instrumentSound = 'Bass Guitar'
-    }
-    else if (weatherText.indexOf('snow') >= 0) {
-      icon = '/images/icons/heavyrain.png'
-      sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
-      nowPlaying = 'SNOW'
-      associativeSound = 'Crowd Applause (slowed to sound wet)'
-      feelingSound = 'Whales/Sticky mud'
-      instrumentSound = 'Bass Guitar'
-    }
-    else if (weatherText.indexOf('thunder') >= 0) {
-      icon = '/images/icons/heavyrain.png'
-      sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
-      nowPlaying = 'RAINY'
-      associativeSound = 'Crowd Applause (slowed to sound wet)'
-      feelingSound = 'Whales/Sticky mud'
-      instrumentSound = 'Bass Guitar'
-    }
-    else if (weatherText.indexOf('cast') >= 0) {
-      icon = './images/icons/overcast.png'
-      sound = '/sounds/Purple_Centering_Prayer.wav'
-      associativeSound = 'Wind through creaking trees'
-      feelingSound = 'Dry branches breaking as you walk on them'
-      instrumentSound = 'Cello'
-      nowPlaying = 'OVERCAST'
-    }
-    else if (weatherText.indexOf('cloudy') >= 0) {
-      icon = '/images/icons/cloudy.png'
-      sound = '/sounds/Buddhist_Mindscape_Hand.wav'
-      nowPlaying = 'CLOUDY'
-      associativeSound = 'Flags in Wind'
-      feelingSound = 'Bat Wings Flapping'
-      instrumentSound = 'Moog Modular Synth'
-    }
-    else if (weatherText.indexOf('partly cloudy') >= 0) {
-      icon = '/images/icons/cloudy.png'
-      sound = '/sounds/Buddhist_Mindscape_Hand.wav'
-      nowPlaying = 'CLOUDY'
-      associativeSound = 'Flags in Wind'
-      feelingSound = 'Bat Wings Flapping'
-      instrumentSound = 'Moog Modular Synth'
-    }
-    else if (weatherText.indexOf('sunny') >= 0) {
-      icon = '/images/icons/sunny.png'
-      sound = '/sounds/Chakratic_Appearance_Crystal.wav'
-      nowPlaying = 'SUNNY'
-      associativeSound = 'Birds Songs/Chirping'
-      feelingSound = 'Campfires'
-      instrumentSound = 'C80 Soft Analog Synth (Pad)'
-    }
-    else if (weatherText.indexOf('clear') >= 0) {
-      icon = '/images/icons/sunny.png'
-      sound = '/sounds/Chakratic_Appearance_Crystal.wav'
-      nowPlaying = 'SUNNY'
-      associativeSound = 'Birds Songs/Chirping'
-      feelingSound = 'Campfires'
-      instrumentSound = 'C80 Soft Analog Synth (Pad)'
-    } else {
-      icon = '/images/icons/overcast.png'
-      sound = '/sounds/Purple_Centering_Prayer.wav'
-      nowPlaying = 'OVERCAST'
-      associativeSound = 'Wind through creaking tress'
-      feelingSound = 'Dry branches breaking as you walk on them'
-      instrumentSound = 'Cello'
-    }
-
-    const soundName = sound.substr(8)
-    const trackTitle = soundName.slice(0, -4);
-    const fullTitle = trackTitle.replace(/[_]/g, ' ')
-
+    let trackTitle = c[status].audio.slice(0, -4);
     this.setState({
-      icon,
-      sound,
-      soundName: fullTitle,
-      nowPlaying,
-      associativeSound,
-      feelingSound,
-      instrumentSound
+      icon: `images/icons/${c[status].icon}`,
+      sound: `sounds${c[status].audio}`,
+      soundName: trackTitle.replace(/[_]/g, ' '),
+      nowPlaying: c[status].title,
+      associativeSound: c[status].assoc,
+      feelingSound: c[status].feeling,
+      instrumentSound: c[status].instr
     })
   }
 
