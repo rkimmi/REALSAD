@@ -23,7 +23,6 @@ class Info extends React.Component {
   }
 
   componentDidMount() {
-
     this.getIconPlusSound()
   }
 
