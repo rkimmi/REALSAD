@@ -1,14 +1,14 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 import Card from './Card'
 import Footer from './Footer'
 import Header from './Header'
 import Info from './Info'
 import WaitIndicator from './WaitIndicator'
-import Weather from './Weather'
 
-import {releaseIndicator, destroyIndicator} from '../actions/waitIndicator'
+import { releaseIndicator, destroyIndicator } from '../actions/waitIndicator'
+import { getWeather } from '../actions/weather'
 
 
 class App extends React.Component {
@@ -17,53 +17,55 @@ class App extends React.Component {
     this.state = {}
     this.toggleIndicator = this.toggleIndicator.bind(this)
   }
-  componentDidMount () {  
+
+  componentDidMount() {
+    this.props.getWeather()
     this.toggleIndicator()
   }
 
-  toggleIndicator () {
-    this.props.dispatch(releaseIndicator()) // changed - only destroy if have weatherObj
-      setTimeout(() =>{
-        this.props.dispatch(destroyIndicator())
-      }, 5000)
-
+  toggleIndicator() {
+    this.props.releaseIndicator() // changed - only destroy if have weatherObj
+    setTimeout(() => {
+      this.props.destroyIndicator()
+    }, 5000)
   }
 
-  render () {
-    if (!this.props.waitIndicator && this.props.getWeather) {
-      return(
+  render() {
+    const { waitIndicator } = this.props
+    if (!waitIndicator) {
+      return (
         <div className='app-container'>
-        <Weather />
-
           <div className='background' />
           <Header />
           <div className='body-container'>
-                <Info />
-
-                <Card />
-                
-            </div>
+            <Info />
+            <Card />
+          </div>
           <Footer />
         </div>
-      ) 
+      )
     } else {
       return (
         <div className='app-container'>
-            <Weather />
-           <WaitIndicator />
+          <WaitIndicator />
         </div>
       )
     }
-
   }
-
 }
 
 const mapStateToProps = (state) => {
   return {
-      waitIndicator: state.waitIndicator,
-      getWeather: state.getWeather
+    waitIndicator: state.waitIndicator
   }
 }
 
-export default connect(mapStateToProps)(App)
+const mapDispatchToProps = dispatch => {
+  return {
+    getWeather: () => dispatch(getWeather()),
+    releaseIndicator: () => dispatch(releaseIndicator()),
+    destroyIndicator: () => dispatch(destroyIndicator())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

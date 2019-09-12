@@ -1,9 +1,9 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 
-import getWeather from './getWeather'
+import weather from './weather'
 import waitIndicator from './waitIndicator'
 
 export default combineReducers({
-  getWeather,
+  weather,
   waitIndicator
 })

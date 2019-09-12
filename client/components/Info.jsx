@@ -8,13 +8,22 @@ import Sound from 'react-sound'
 class Info extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { playing: Sound.status.PAUSED, clicked: false }
+    this.state = {
+      playing: Sound.status.PAUSED, clicked: false, icon: '',
+      sound: '',
+      soundName: '',
+      nowPlaying: '',
+      associativeSound: '',
+      feelingSound: '',
+      instrumentSound: ''
+    }
     this.getIconPlusSound = this.getIconPlusSound.bind(this)
     this.playSound = this.playSound.bind(this)
   }
 
   componentDidMount() {
-    this.props.getWeather &&
+    const { weather } = this.props
+    weather &&
       this.getIconPlusSound()
   }
 
@@ -23,15 +32,15 @@ class Info extends React.Component {
   }
 
   getIconPlusSound() {
-    const weather = this.props.getWeather.condition.text.toLowerCase()
-    const weatherText = weather.split(' ')
+    const { weather } = this.props
+    let weatherText = weather.condition.text.toLowerCase()
+    weatherText = weatherText.split(' ')
     let icon = ''
     let sound = ''
     let nowPlaying = ''
     let associativeSound = ''
     let feelingSound = ''
     let instrumentSound = ''
-
     if (weatherText.indexOf('shower') >= 0) {
       icon = '/images/icons/raining.png'
       sound = '/sounds/Orgasmic_Biofeedback_Aura.wav'
@@ -133,18 +142,19 @@ class Info extends React.Component {
     const fullTitle = trackTitle.replace(/[_]/g, ' ')
 
     this.setState({
-      icon: icon,
-      sound: sound,
+      icon,
+      sound,
       soundName: fullTitle,
-      nowPlaying: nowPlaying,
-      associativeSound: associativeSound,
-      feelingSound: feelingSound,
-      instrumentSound: instrumentSound
+      nowPlaying,
+      associativeSound,
+      feelingSound,
+      instrumentSound
     })
   }
 
   render() {
-    if (this.props.getWeather) {
+    const { weather } = this.props
+    if (weather) {
       return (
         <div className='info-everything'>
           <Sound url={this.state.sound}
@@ -163,20 +173,20 @@ class Info extends React.Component {
                 <div className='horizontal-line' />
                 <div className='temperature'>
                   <div className='current-temp' >
-                    {`${this.props.getWeather.temp_c}°C`}
+                    {`${weather.temp_c}°C`}
                   </div>
                   <div className='vertical-line' />
                   <div className='feels-like-container' >
                     <div className='feels-like-text'> feels like: </div>
                     <div className='feels-like'>
-                      {`${this.props.getWeather.feelslike_c}°C`}
+                      {`${weather.feelslike_c}°C`}
                     </div>
                   </div>
                 </div>
                 <div className='icon-container'>
                   <img className='icon' src={this.state.icon} />
                   <div className='humidity-text'>humidity:
-                                <div className='humidity'>{`${this.props.getWeather.humidity}%`}</div>
+                                <div className='humidity'>{`${weather.humidity}%`}</div>
                   </div>
                   <div className={`play-circle-${this.state.clicked}`} onClick={this.playSound}><div className='play' /></div>
                 </div>
@@ -213,7 +223,7 @@ class Info extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    getWeather: state.getWeather,
+    weather: state.weather,
     iconSound: state.iconSound
   }
 }
