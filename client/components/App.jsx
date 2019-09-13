@@ -1,14 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
-import Card from './Card'
-import Footer from './Footer'
-import Header from './Header'
-import Info from './Info'
+import { Route } from 'react-router'
 import WaitIndicator from './WaitIndicator'
 
 import { releaseIndicator, destroyIndicator } from '../actions/waitIndicator'
 import { getWeather } from '../actions/weather'
+import StrangeIslands from './strange-islands/StrangeIslands'
+
+import Home from './Home'
+import About from './About'
 
 
 class App extends React.Component {
@@ -19,7 +19,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getWeather()
     this.toggleIndicator()
   }
 
@@ -35,13 +34,9 @@ class App extends React.Component {
     if (!waitIndicator) {
       return (
         <div className='app-container'>
-          <div className='background' />
-          <Header />
-          <div className='body-container'>
-            <Info />
-            <Card />
-          </div>
-          <Footer />
+          <Route path='/strangeislands' component={StrangeIslands} />
+          <Route path='/about' component={About} />
+          <Route exact path='/' component={Home} />
         </div>
       )
     } else {
