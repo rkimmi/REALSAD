@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link, Redirect } from 'react-router-dom'
 
 class Home extends React.Component {
   constructor(props) {
@@ -13,7 +14,9 @@ class Home extends React.Component {
   render() {
     return (
       <div className='home-container'>
+        <Redirect to='/about'></Redirect>
         Home
+        <Link to='/strangeislands'>click</Link>
       </div>
     )
   }
