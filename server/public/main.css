@@ -647,3 +647,11 @@ b.inspo-bold, .inspo {
 ::-moz-selection {
   background: transparent; /* Gecko Browsers */
 }
+
+.about-container {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 38px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 20%;
+}

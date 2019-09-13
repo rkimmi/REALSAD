@@ -13,7 +13,9 @@ class About extends React.Component {
   render() {
     return (
       <div className='about-container'>
-        About
+        Wellbeing Analysis Techniques Limited™, co-directed by Kimmi Rindel and Vanessa Crofskey, is a
+        organisation (and arts collective) that examines the industry of wellness through arts practice,
+        satire and genuine belief in alternative therapies.
       </div>
     )
   }
