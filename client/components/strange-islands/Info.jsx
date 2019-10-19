@@ -32,7 +32,7 @@ class Info extends React.Component {
 
   getIconPlusSound() {
     const { weather } = this.props
-    let weatherText = weather.condition.text.toLowerCase()
+    let weatherText = weather.weather_descriptions[0].toLowerCase()
     weatherText = weatherText.split(' ')
     let status = ''
     switch (true) {
@@ -105,13 +105,13 @@ class Info extends React.Component {
                 <div className='horizontal-line' />
                 <div className='temperature'>
                   <div className='current-temp' >
-                    {`${weather.temp_c}°C`}
+                    {`${weather.temperature}°C`}
                   </div>
                   <div className='vertical-line' />
                   <div className='feels-like-container' >
                     <div className='feels-like-text'> feels like: </div>
                     <div className='feels-like'>
-                      {`${weather.feelslike_c}°C`}
+                      {`${weather.feelslike}°C`}
                     </div>
                   </div>
                 </div>

@@ -56,8 +56,8 @@ class Card extends React.Component {
 
   setWeather() {
     const { weather } = this.props
-    const condition = weather.condition.text
-    const newCondition = _.lowerCase(condition)
+    const condition = weather.weather_descriptions[0]
+    const newCondition = _.lowerCase('')
     let dc = weather.temp_c
     let clothing = 4
     switch (true) {

@@ -13,7 +13,7 @@ export function getWeather() {
   return dispatch => {
     dispatch(requestWeather())
     return request
-      .get(`https://api.apixu.com/v1/current.json?key=${apiKey}`)
+      .get(`http://api.weatherstack.com/current?access_key=${apiKey}`)
       .set('Accept', 'application/json')
       .then(res => {
         dispatch(receiveWeather(res.body.current))

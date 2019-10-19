@@ -1,5 +1,5 @@
 const initialState = {
-  condition: { text: '' }
+  weather_descriptions: [' '] 
 }
 
 const weather = (state = initialState, action) => {
