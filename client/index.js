@@ -1,19 +1,19 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore, compose, applyMiddleware } from 'redux'
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import { Router } from 'react-router-dom'
+import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
-import reducers from './reducers'
-import App from './components/App'
+import reducers from './reducers';
+import App from './components/App';
 
-const store = createStore(reducers,
-  compose(applyMiddleware(
-    thunkMiddleware
-  ), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  reducers,
+  compose(applyMiddleware(thunkMiddleware), composeEnhancers)
+);
 
 document.addEventListener('DOMContentLoaded', () => {
   render(
@@ -23,5 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
       </Router>
     </Provider>,
     document.getElementById('app')
-  )
-})
+  );
+});
