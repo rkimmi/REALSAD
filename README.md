@@ -1,1 +1,4 @@
-# React-redux boilerplate
+# Run application
+
+$ npm i
+$ npm run dev
