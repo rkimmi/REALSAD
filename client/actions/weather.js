@@ -19,6 +19,9 @@ export function getWeather() {
         dispatch(receiveWeather(res.body.current))
         return res.data
       })
+      .catch((e) => {
+        console.error(e);
+      })
   }
 }
 
