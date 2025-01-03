@@ -57,7 +57,7 @@ class Card extends React.Component {
   setWeather() {
     const { weather } = this.props
     const condition = weather.weather_descriptions[0]
-    const newCondition = _.lowerCase('')
+
     let dc = weather.temp_c
     let clothing = 4
     switch (true) {
@@ -76,7 +76,7 @@ class Card extends React.Component {
       default:
         clothing = 2
     }
-    this.setState({ condition: newCondition, clothing })
+    this.setState({ condition, clothing })
   }
   render() {
     const { postcardShowing, image, quote, condition, clothing } = this.state

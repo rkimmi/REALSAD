@@ -9,7 +9,7 @@ const Header = () => {
         {`STRANGE ISLANDS ONLINE" by Vanessa Crofskey & Kimmi Rindel, with sound by James Risbey.`}
         </div>
         <div className='header-link'>
-        <a href='http://windowgallery.co.nz/exhibitions/strange-islands-online'>View on Window Gallery.</a>
+        <a className="strange-island-header"href='http://windowgallery.co.nz/exhibitions/strange-islands-online'>View on Window Gallery.</a>
         </div>
         </div>
 

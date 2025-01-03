@@ -1,5 +1,7 @@
 html, body, #app {
     min-width: 100%;
+    min-height: 100%;
+    height: 100%;
     margin: 0;
     padding:0;
     display: flex;
@@ -305,12 +307,13 @@ b.p-small {
   font-size: 12px;
 }
 
-a {
+.strange-island-header {
   color: whitesmoke;
   text-decoration: none;
+  cursor: pointer;
 }
 
-a:hover {
+.strange-island-header:hover {
   color: #9E9EF3;
 }
 
@@ -649,7 +652,6 @@ b.inspo-bold, .inspo {
 }
 
 .about-container {
-  font-family: 'Open Sans', sans-serif;
   font-size: 38px;
   text-align: justify;
   font-style: italic;
@@ -658,3 +660,61 @@ b.inspo-bold, .inspo {
   margin-top: 20%;
   color: #a7a7f5;
 }
+
+.home-container {
+ width: 100%;
+ height: 100%;
+}
+
+.paper-bg {
+  background-image: url("./images/home/scrunched-up-paper-background.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255,255,255,0.8);
+  background-blend-mode: lighten;
+}
+
+.project-title, .project-date {
+  color: blue;
+}
+
+a {
+  text-decoration:  none;
+}
+
+.project-title {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding-top: 2px;
+}
+
+.project-date {
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.project-title:hover {
+  text-decoration: underline;
+}
+
+.project-group {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.about-nav {
+  display: flex;
+  padding: 25px;
+}
+
+.nav {
+  margin-left: auto;
+  text-decoration: underline;
+}
+

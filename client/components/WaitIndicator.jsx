@@ -1,7 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
-class waitIndicator extends React.Component {
+class WaitIndicator extends React.Component {
     constructor(props) {
         super(props)
         this.state = { }
@@ -18,5 +17,5 @@ class waitIndicator extends React.Component {
 }
 
   
-export default waitIndicator
+export default WaitIndicator
 
