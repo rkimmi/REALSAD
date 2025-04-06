@@ -81,7 +81,8 @@ class Card extends React.Component {
   render() {
     const { postcardShowing, image, quote, condition, clothing } = this.state
     const { weather } = this.props
-    const style = { backgroundImage: `url(${image})` }
+    const style = {backgroundImage: `url(/images/strangeislands/${image})`}
+    
     if (!postcardShowing) {
       return (
         <div className='card-container' onClick={this.toggleCard}>

@@ -10,10 +10,12 @@ import reducers from './reducers';
 import App from './components/App';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = createStore(
   reducers,
-  compose(applyMiddleware(thunk), composeEnhancers)
+  composeEnhancers(applyMiddleware(thunk))
 );
+
 document.addEventListener('DOMContentLoaded', () => {
   render(
     <Provider store={store}>

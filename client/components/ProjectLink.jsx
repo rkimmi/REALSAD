@@ -12,7 +12,7 @@ class ProjectLink extends React.Component {
     return (
         <div className="project-group">
             <span className="project-date">
-                <i>{date}</i> .
+                <i>{date}</i>&nbsp;&nbsp;.
             </span>
             <Link to={url}>
                 <a className="project-title">

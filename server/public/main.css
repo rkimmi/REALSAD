@@ -6,7 +6,6 @@ html, body, #app {
     padding:0;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
     background-color: #fffef9;
 }
 
@@ -22,7 +21,6 @@ html, body, #app {
     background-color: #fffef9;
     position:relative;
     height: 100%;
-    overflow-x: hidden;
 }
 
 
@@ -668,16 +666,21 @@ b.inspo-bold, .inspo {
 
 .paper-bg {
   background-image: url("./images/home/scrunched-up-paper-background.jpg");
-  height: 100%;
-  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed; 
   background-color: rgba(255,255,255,0.8);
   background-blend-mode: lighten;
 }
 
-.project-title, .project-date {
+@media (max-width: 768px) {
+  .paper-bg {
+   min-height: 100vh;
+  }
+}
+
+.project-title, .project-date, .project-header, .project-details {
   color: blue;
 }
 
@@ -685,15 +688,64 @@ a {
   text-decoration:  none;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
 .project-title {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .project-date {
   margin-right: 20px;
   font-size: 16px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.project-header, .project-details {
+  margin: 0;
+  font-style: italic;
+}
+
+.project-details {
+  margin-top: 160px;
+  display: flex;
+  flex: 1 1 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-details-inner {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-image {
+  max-width: 400px;
 }
 
 .project-title:hover {
@@ -701,10 +753,31 @@ a {
 }
 
 .project-group {
+  padding: 20px;
   display: flex;
   flex-direction: row;
-  padding-top: 20px;
-  padding-left: 20px;
+  flex-wrap: wrap;
+}
+
+.project-description {
+  white-space: normal;
+  word-wrap: break-word;
+  width: 99%;
+  margin: auto;
+  text-align: justify;
+}
+
+.project-images {
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.project-image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .about-nav {

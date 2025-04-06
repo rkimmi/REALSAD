@@ -6,9 +6,12 @@ import WaitIndicator from "./WaitIndicator";
 import { releaseIndicator, destroyIndicator } from "../actions/waitIndicator";
 import { getWeather } from "../actions/weather";
 import StrangeIslands from "./strange-islands/StrangeIslands";
-
 import Home from "./Home";
 import About from "./About";
+import InventoryBlue from "./inventory-blue/InventoryBlue";
+import DailyExposure from "./daily-exposure/DailyExposure";
+import NowYouSeeMe from "./now-you-see-me/NowYouSeeMe";
+
 
 class App extends React.Component {
   constructor(props) {
@@ -33,9 +36,12 @@ class App extends React.Component {
     if (!waitIndicator) {
       return (
         <div className="app-container">
+           <Route exact path="/" component={Home} />
           <Route path="/strangeislands" component={StrangeIslands} />
           <Route path="/about" component={About} />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/inventoryforfeelingblue" component={InventoryBlue} />
+          <Route exact path="/daiyexposure" component={DailyExposure} />
+          <Route exact path="/nowyouseeme" component={NowYouSeeMe} />
         </div>
       );
     } else {
