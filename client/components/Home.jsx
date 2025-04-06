@@ -4,8 +4,7 @@ import ProjectLink from "./ProjectLink";
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <div className="paper-bg">
+    <div className="home-container paper-bg">
         <nav className="about-nav">
           <Link className="nav" to="/about">
               <i>About</i>
@@ -32,7 +31,6 @@ const Home = () => {
           location="Window Online"
           url="/strangeislands"/>
       </div>
-    </div>
   );
 };
 

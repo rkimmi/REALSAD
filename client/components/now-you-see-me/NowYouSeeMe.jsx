@@ -9,7 +9,8 @@ class NowYouSeeMe extends React.Component {
 
   render() {
     return (
-        <div className="paper-bg">
+        <div className='project-container'>
+            <div className='paper-bg'>
             <div className="project-group flex-wrap">
                 <ProjectHeader 
                     title="Now You See Me"
@@ -42,6 +43,7 @@ class NowYouSeeMe extends React.Component {
         {/* description */}
         {/* images */}
         {/* download */}
+      </div>
       </div>
       </div>
     )

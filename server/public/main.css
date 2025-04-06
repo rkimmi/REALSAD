@@ -1,6 +1,6 @@
 html, body, #app {
     min-width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     height: 100%;
     margin: 0;
     padding:0;
@@ -10,7 +10,7 @@ html, body, #app {
 }
 
 .app-container {
-    min-height: 100%;
+    min-height: 100vh;
     min-width: 100%;
     top: 0px;
     left: 0px;
@@ -659,7 +659,7 @@ b.inspo-bold, .inspo {
   color: #a7a7f5;
 }
 
-.home-container {
+.home-container, .project-container {
  width: 100%;
  height: 100%;
 }
