@@ -15,17 +15,17 @@ const Home = () => {
             date="2021" 
             title="Now You See Me" 
             location="The Booth, Gus Fisher"
-            url="iii"/>
+            url="/nowyouseeme"/>
       <ProjectLink 
           date="2020" 
           title="Activities/Inventory for Feeling Blue" 
           location="Blue Oyster Postal Project 2020"
-          url="ii"/>
+          url="/inventoryforfeelingblue"/>
       <ProjectLink 
           date="2018" 
           title="Daily Exposure" 
           location="Window"
-          url="i"/>
+          url="/daiyexposure"/>
       <ProjectLink 
           date="2018" 
           title="Strange Islands" 
