@@ -14,7 +14,7 @@ class DailyExposure extends React.Component {
             title="Daily Exposure" 
             date="2018" 
             location="Window" 
-            locationUrl=""/>
+            locationUrl=" "/>
 
         {/* description */}
         {/* images */}
