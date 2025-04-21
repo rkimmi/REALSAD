@@ -35,9 +35,6 @@ class DailyExposure extends React.Component {
                         <img className="project-image" src="/images/dailyexposure/daily-exposure1.jpg"></img>
                     </div>
                     <p>
-                        The clinic was open for use from Mon – Wed, 12.30 – 3pm.
-                        <br/>
-                        <br/>
                     Hosted by Light Therapy Support Assistant, Mya Maree Cole.
                     <br/>
                     <br/>
