@@ -771,6 +771,9 @@ a {
   width: 100%;
   max-width: 500px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .project-image {
@@ -788,5 +791,10 @@ a {
 .nav {
   margin-left: auto;
   text-decoration: underline;
+}
+
+.url-w-icon {
+  line-height: 1.5;
+  font-style: italic;
 }
 

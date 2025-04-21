@@ -17,11 +17,18 @@ class ProjectHeader extends React.Component {
           <p className="project-date">
           <i>{date}</i>&nbsp;&nbsp;.
           </p>
-          <a className="underline nowrap" href={locationUrl}>
-          <p className="">
+          {locationUrl.length ? (
+            <a className="underline nowrap" href={locationUrl}>
+            <p className="">
+              {location}
+            </p>
+          </a> 
+          ):
+           <p className="">
             {location}
-          </p>
-            </a>
+            </p>
+          }
+         
           </div>
       </div>
     )

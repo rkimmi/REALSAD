@@ -40,7 +40,7 @@ class App extends React.Component {
           <Route path="/strangeislands" component={StrangeIslands} />
           <Route path="/about" component={About} />
           <Route exact path="/inventoryforfeelingblue" component={InventoryBlue} />
-          <Route exact path="/daiyexposure" component={DailyExposure} />
+          <Route exact path="/dailyexposure" component={DailyExposure} />
           <Route exact path="/nowyouseeme" component={NowYouSeeMe} />
         </div>
       );

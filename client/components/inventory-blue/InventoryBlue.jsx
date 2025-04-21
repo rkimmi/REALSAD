@@ -16,10 +16,28 @@ class InventoryBlue extends React.Component {
             location="Blue Oyster Postal Project 2020" 
             locationUrl=""
         ></ProjectHeader>
-    
-        {/* description */}
-        {/* images */}
-        {/* download */}
+            <div className="project-details flex-column">
+                    <div className='project-details-inner'>
+                    <p className="project-description">
+                    <br/><br/>
+                      INVENTORY/ACTIVIITIES FOR FEELING BLUE, distributed to subscribers via POST as part of Blue Oyster's POST — Postal Project, 2020.
+                    <br/>
+                    </p>
+                    <br/>
+                    <div className="project-images">
+                        <img className="project-image" src="/images/inventoryblue/inventory-front.jpg"></img>
+                        <img className="project-image" src="/images/inventoryblue/inventory-back-2.jpg"></img>
+                    </div>
+                    <p>
+                        <br/>
+                        <br/>
+                    <br/>
+                    <br/>
+                    </p>
+                    <br/>
+
+                    </div>
+                </div>
       </div>
     )
   }
