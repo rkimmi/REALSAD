@@ -10,6 +10,7 @@ class DailyExposure extends React.Component {
 
   render() {
     return (
+      <div className='project-container'>
         <div className="paper-bg project-group">
         <ProjectHeader 
             title="Daily Exposure" 
@@ -49,6 +50,7 @@ class DailyExposure extends React.Component {
                     </div>
                     </div>
                 </div>
+      </div>
       </div>
     )
   }

@@ -9,18 +9,22 @@ class InventoryBlue extends React.Component {
 
   render() {
     return (
+      <div className='project-container'>
         <div className="paper-bg project-group">
+
         <ProjectHeader 
             title="Activities/Inventory for Feeling Blue"
             date="2020" 
             location="Blue Oyster Postal Project 2020" 
             locationUrl=""
         ></ProjectHeader>
+
             <div className="project-details flex-column">
                     <div className='project-details-inner'>
+                    <div style={{marginTop: '60px'}}/>
                     <p className="project-description">
                     <br/><br/>
-                      INVENTORY/ACTIVIITIES FOR FEELING BLUE, distributed to subscribers via POST as part of Blue Oyster's POST — Postal Project, 2020.
+                      INVENTORY/ACTIVIITIES FOR FEELING BLUE, distributed to subscribers via post as part of Blue Oyster's POST — Postal Project, 2020.
                     <br/>
                     </p>
                     <br/>
@@ -38,6 +42,7 @@ class InventoryBlue extends React.Component {
 
                     </div>
                 </div>
+      </div>
       </div>
     )
   }

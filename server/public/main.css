@@ -649,14 +649,13 @@ b.inspo-bold, .inspo {
   background: transparent; /* Gecko Browsers */
 }
 
-.about-container {
-  font-size: 38px;
-  text-align: justify;
+.about {
+  font-size: 20px;
   font-style: italic;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 20%;
-  color: #a7a7f5;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  line-height: 1.5;
 }
 
 .home-container, .project-container {
@@ -680,7 +679,7 @@ b.inspo-bold, .inspo {
   }
 }
 
-.project-title, .project-date, .project-header, .project-details {
+.about, .project-title, .project-date, .project-header, .project-details {
   color: blue;
 }
 
@@ -733,7 +732,7 @@ a {
   margin-top: 160px;
   display: flex;
   flex: 1 1 100%;
-  max-width: 500px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -742,10 +741,6 @@ a {
   width: auto;
   margin-left: auto;
   margin-right: auto;
-}
-
-.project-image {
-  max-width: 400px;
 }
 
 .project-title:hover {
@@ -769,7 +764,6 @@ a {
 
 .project-images {
   width: 100%;
-  max-width: 500px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
