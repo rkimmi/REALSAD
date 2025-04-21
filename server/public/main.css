@@ -651,7 +651,6 @@ b.inspo-bold, .inspo {
 
 .about {
   font-size: 20px;
-  font-style: italic;
   margin: auto;
   width: 80%;
   text-align: center;
@@ -679,8 +678,10 @@ b.inspo-bold, .inspo {
   }
 }
 
-.about, .project-title, .project-date, .project-header, .project-details {
+.about, .nav, .project-title, .project-date, .project-header, .project-details {
   color: blue;
+  font-family: arial;
+  font-style: italic;
 }
 
 a {
@@ -725,7 +726,6 @@ a {
 
 .project-header, .project-details {
   margin: 0;
-  font-style: italic;
 }
 
 .project-details {
@@ -760,6 +760,7 @@ a {
   width: 99%;
   margin: auto;
   text-align: justify;
+  font-style: normal;
 }
 
 .project-images {
@@ -777,13 +778,19 @@ a {
   display: block;
 }
 
-.about-nav {
+.nav {
   display: flex;
-  padding: 25px;
+  padding-left: 15px;
+  padding-right: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
-.nav {
+.right {
   margin-left: auto;
+}
+
+.nav-item {
   text-decoration: underline;
 }
 
@@ -792,3 +799,7 @@ a {
   font-style: italic;
 }
 
+.back-btn {
+  margin-left: -10px;
+  margin-top: -10px;
+}

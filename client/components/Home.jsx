@@ -5,8 +5,11 @@ import ProjectLink from "./ProjectLink";
 const Home = () => {
   return (
     <div className="home-container paper-bg">
-        <nav className="about-nav">
-          <Link className="nav" to="/about">
+        <nav className="nav">
+            <h2 className="project-header">
+              Wellbeing Analysis Techniques Limited™
+            </h2>
+          <Link className="nav-item right" to="/about">
               <i>About</i>
           </Link>
         </nav>
@@ -23,7 +26,7 @@ const Home = () => {
       <ProjectLink 
           date="2018" 
           title="Daily Exposure" 
-          location="Window"
+          location="Window Gallery"
           url="/dailyexposure"/>
       <ProjectLink 
           date="2018" 

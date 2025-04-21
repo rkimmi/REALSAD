@@ -30,14 +30,15 @@ class NowYouSeeMe extends React.Component {
                     </p>
                     <div className="project-images">
                         <img className="project-image" src="/images/nowyouseeme/nysm3.jpg"></img>
-                        <img className="project-image" src="/images/nowyouseeme/mirror.jpg"></img>
-                    </div>
-                    <p className="project-description">     
+                        <p className="project-description">     
                         <br/>
                         In speaking to science-fictive ideas of domestic space — a screen in every room, everyday objects made smart — Now You See Me promotes a semblance of helpfulness; of multitasking, of time-saving, while embodies the merging of rituals, of internalised and actualised surveillance. 
                         <br/>
                         <br/>
                     </p>
+                        <img className="project-image" src="/images/nowyouseeme/mirror.jpg"></img>
+                    </div>
+    
                     </div>
                 </div>
       </div>

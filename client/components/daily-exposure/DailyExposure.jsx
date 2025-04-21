@@ -15,7 +15,7 @@ class DailyExposure extends React.Component {
         <ProjectHeader 
             title="Daily Exposure" 
             date="2018" 
-            location="Window" 
+            location="Window Gallery" 
             locationUrl="https://windowgallery.co.nz/exhibitions/daily-exposure"/>
             <div className="project-details flex-column">
                     <div className='project-details-inner'>

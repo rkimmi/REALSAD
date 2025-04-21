@@ -36,7 +36,7 @@ class App extends React.Component {
     if (!waitIndicator) {
       return (
         <div className="app-container">
-           <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route path="/strangeislands" component={StrangeIslands} />
           <Route path="/about" component={About} />
           <Route exact path="/inventoryforfeelingblue" component={InventoryBlue} />
