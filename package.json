@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack && node server",
     "dev": "nodemon --watch server & webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "build:prod": "webpack --config webpack.prod.config.js"
   },
   "author": "WATL",
   "license": "ISC",
