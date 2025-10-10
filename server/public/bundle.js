@@ -55942,7 +55942,7 @@ exports.default = config;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(1);
@@ -55958,48 +55958,52 @@ var _ProjectLink2 = _interopRequireDefault(_ProjectLink);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home() {
-    return _react2.default.createElement(
-        "div",
-        { className: "home-container paper-bg" },
+  return _react2.default.createElement(
+    "div",
+    { className: "home-container paper-bg" },
+    _react2.default.createElement(
+      "nav",
+      { className: "nav" },
+      _react2.default.createElement(
+        "h2",
+        { className: "project-header" },
+        "Wellbeing Analysis Techniques Limited\u2122"
+      ),
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { className: "nav-item right", to: "/about" },
         _react2.default.createElement(
-            "nav",
-            { className: "nav" },
-            _react2.default.createElement(
-                "h2",
-                { className: "project-header" },
-                "Wellbeing Analysis Techniques Limited\u2122"
-            ),
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { className: "nav-item right", to: "/about" },
-                _react2.default.createElement(
-                    "i",
-                    null,
-                    "About"
-                )
-            )
-        ),
-        _react2.default.createElement(_ProjectLink2.default, {
-            date: "2021",
-            title: "Now You See Me",
-            location: "The Booth, Gus Fisher",
-            url: "/nowyouseeme" }),
-        _react2.default.createElement(_ProjectLink2.default, {
-            date: "2020",
-            title: "Activities/Inventory for Feeling Blue",
-            location: "Blue Oyster Postal Project 2020",
-            url: "/inventoryforfeelingblue" }),
-        _react2.default.createElement(_ProjectLink2.default, {
-            date: "2018",
-            title: "Daily Exposure",
-            location: "Window Gallery",
-            url: "/dailyexposure" }),
-        _react2.default.createElement(_ProjectLink2.default, {
-            date: "2018",
-            title: "Strange Islands",
-            location: "Window Online",
-            url: "/strangeislands" })
-    );
+          "i",
+          null,
+          "About"
+        )
+      )
+    ),
+    _react2.default.createElement(_ProjectLink2.default, {
+      date: "2021",
+      title: "Now You See Me",
+      location: "The Booth, Gus Fisher",
+      url: "/nowyouseeme"
+    }),
+    _react2.default.createElement(_ProjectLink2.default, {
+      date: "2020",
+      title: "Activities/Inventory for Feeling Blue",
+      location: "Blue Oyster Postal Project 2020",
+      url: "/inventoryforfeelingblue"
+    }),
+    _react2.default.createElement(_ProjectLink2.default, {
+      date: "2018",
+      title: "Daily Exposure",
+      location: "Window Gallery",
+      url: "/dailyexposure"
+    }),
+    _react2.default.createElement(_ProjectLink2.default, {
+      date: "2018",
+      title: "Strange Islands",
+      location: "Window Online",
+      url: "/strangeislands"
+    })
+  );
 };
 
 exports.default = Home;
